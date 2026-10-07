@@ -1,368 +1,1218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lovella Faith Banguis Diez, DBM | Executive Solution Specialist & Business Analytics Consultant</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome Icons Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>NDKC GASS — General Administrative Support Services Office Portal</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts with display=swap for zero flicker & zero layout shift -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Playfair+Display:ital,wght@1,600;1,700;1,800&family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        serifTagline: ['Playfair Display', 'serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        ndkcGreen: '#004822',
+                        ndkcGreenDark: '#002e15',
+                        ndkcGreenLight: '#006631',
+                        ndkcAccent: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Scroll & Sticky Offset Fix */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 180px;
+        }
+        section {
+            scroll-margin-top: 180px;
+        }
+
+        /* Clean Circular Mask for School Seal */
+        .clean-seal {
+            clip-path: circle(49% at 50% 50%);
+            object-fit: contain;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        img {
+            content-visibility: auto;
+        }
+
+        /* Background Overlays */
+        .bg-hero-ndkc1 {
+            background-image: linear-gradient(135deg, rgba(0, 46, 21, 0.92) 0%, rgba(0, 72, 34, 0.88) 50%, rgba(0, 30, 12, 0.95) 100%), url('NDKC 1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .bg-whoweare-ndkc2 {
+            background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(241, 245, 249, 0.94) 100%), url('NDKC 2.png'), url('NDKC 2.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .bg-faculty-ndkc3 {
+            background-image: linear-gradient(135deg, rgba(0, 46, 21, 0.95) 0%, rgba(0, 72, 34, 0.92) 100%), url('NDKC 3.png'), url('NDKC 3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .bg-repair-ndkc4 {
+            background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(241, 245, 249, 0.94) 100%), url('NDKC 4.png'), url('NDKC 4.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .bg-safety-ndkc5 {
+            background-image: linear-gradient(135deg, rgba(0, 46, 21, 0.95) 0%, rgba(0, 24, 10, 0.97) 100%), url('NDKC 5.png'), url('NDKC 5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .bg-footer-ndkc1 {
+            background-image: linear-gradient(180deg, rgba(0, 46, 21, 0.98) 0%, rgba(0, 20, 8, 0.99) 100%), url('NDKC 1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #004822;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-slate-50 font-body text-slate-800 antialiased selection:bg-emerald-700 selection:text-white min-h-screen flex flex-col">
 
-    <!-- Background Tech Rays Graphic FX -->
-    <div class="bg-glow-ray"></div>
+    <!-- HEADER / BRANDING & NAVIGATION -->
+    <header class="sticky top-0 z-50 shadow-xl border-b border-slate-200 bg-white">
+        
+        <!-- WHITE TOP HEADER BAR -->
+        <div class="bg-white py-3 px-4 sm:px-8 border-b border-slate-100">
+            <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+                
+                <!-- Left: Enlarged & Redesigned College Title taking up the space -->
+                <a href="#" class="group flex items-center">
+                    <span class="font-cinzel text-ndkcGreen font-black text-lg sm:text-2xl md:text-3xl lg:text-4xl tracking-tight uppercase leading-tight group-hover:text-emerald-700 transition drop-shadow-sm">
+                        NOTRE DAME OF KIDAPAWAN COLLEGE
+                    </span>
+                </a>
 
-    <!-- Header / Navigation -->
-    <header>
-        <nav class="navbar">
-            <div class="logo"><a href="#">LFD | <span class="accent-text">Executive Portfolio</span></a></div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Showcase</a></li>
-                <li><a href="#testimonials">Feedback</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+                <!-- Right: Quick Utilities with Marist Logo -->
+                <div class="flex items-center gap-3 text-slate-600 shrink-0">
+                    <!-- Marist Logo Badge in Header -->
+                    <div class="flex bg-emerald-50 border-2 border-emerald-400 text-ndkcGreenDark px-3 py-1.5 rounded-xl items-center gap-2 shadow-sm">
+                        <div class="w-7 h-7 bg-white rounded-full overflow-hidden flex items-center justify-center shrink-0 border border-emerald-300">
+                            <img src="MARIST LOGO.png" onerror="this.onerror=null; this.src='MARIST LOGO_2.png';" alt="Marist Emblem" class="w-full h-full object-contain">
+                        </div>
+                        <div class="text-left border-l border-emerald-300 pl-2">
+                            <span class="block text-[8px] uppercase font-black tracking-widest text-emerald-700 leading-none">A MARIST</span>
+                            <span class="block text-[10px] uppercase font-black text-ndkcGreenDark leading-none">SCHOOL</span>
+                        </div>
+                    </div>
+
+                    <button onclick="document.getElementById('prioritySearch').focus()" title="Search Portal" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100 text-slate-600 transition">
+                        <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                    </button>
+                    <a href="https://facebook.com" target="_blank" class="w-9 h-9 bg-ndkcGreen text-white rounded-lg flex items-center justify-center hover:bg-emerald-700 transition shadow-sm">
+                        <i class="fa-brands fa-facebook-f text-sm"></i>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" class="w-9 h-9 bg-ndkcGreen text-white rounded-lg flex items-center justify-center hover:bg-emerald-700 transition shadow-sm">
+                        <i class="fa-brands fa-youtube text-sm"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- DARK GREEN NAVIGATION BAR -->
+        <div class="bg-gradient-to-r from-ndkcGreenDark via-ndkcGreen to-ndkcGreenDark py-2.5 px-4 sm:px-8 border-b-2 border-emerald-500 text-white">
+            <div class="max-w-7xl mx-auto flex justify-between items-center gap-3">
+                
+                <nav class="hidden xl:flex flex-wrap items-center gap-2 text-xs font-heading font-extrabold">
+                    <a href="#about" class="border-2 border-emerald-400/80 bg-white/10 hover:bg-emerald-500 hover:border-emerald-300 text-white transition px-3.5 py-1.5 rounded-xl shadow-md backdrop-blur-md">Who We Are</a>
+                    <a href="#services" class="border-2 border-emerald-400/80 bg-white/10 hover:bg-emerald-500 hover:border-emerald-300 text-white transition px-3.5 py-1.5 rounded-xl shadow-md backdrop-blur-md">Core Services</a>
+                    <a href="#faculty" class="border-2 border-emerald-400/80 bg-white/10 hover:bg-emerald-500 hover:border-emerald-300 text-white transition px-3.5 py-1.5 rounded-xl shadow-md backdrop-blur-md">Faculty Services</a>
+                    <a href="#safety" class="border-2 border-emerald-400/80 bg-white/10 hover:bg-emerald-500 hover:border-emerald-300 text-white transition px-3.5 py-1.5 rounded-xl shadow-md backdrop-blur-md">Safety & Access</a>
+                    <a href="#guidelines" class="border-2 border-emerald-400/80 bg-white/10 hover:bg-emerald-500 hover:border-emerald-300 text-white transition px-3.5 py-1.5 rounded-xl shadow-md backdrop-blur-md">Guidelines</a>
+                    <a href="#workflow" class="border-2 border-emerald-400/80 bg-white/10 hover:bg-emerald-500 hover:border-emerald-300 text-white transition px-3.5 py-1.5 rounded-xl shadow-md backdrop-blur-md">Workflow</a>
+                    <a href="#types" class="border-2 border-emerald-400/80 bg-white/10 hover:bg-emerald-500 hover:border-emerald-300 text-white transition px-3.5 py-1.5 rounded-xl shadow-md backdrop-blur-md">Repair Types</a>
+                    <a href="#roles" class="border-2 border-emerald-400/80 bg-white/10 hover:bg-emerald-500 hover:border-emerald-300 text-white transition px-3.5 py-1.5 rounded-xl shadow-md backdrop-blur-md">Roles</a>
+                </nav>
+
+                <div class="flex items-center gap-3 ml-auto">
+                    <button onclick="toggleMobileMenu()" class="xl:hidden p-2 text-white border-2 border-emerald-400 bg-white/10 hover:bg-emerald-500 transition focus:outline-none rounded-xl">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden xl:hidden bg-ndkcGreenDark border-t border-emerald-800 px-6 py-4 space-y-2 text-sm font-heading font-bold text-white">
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 px-4 rounded-xl border border-emerald-500 bg-white/5 hover:bg-emerald-600">Who We Are</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 px-4 rounded-xl border border-emerald-500 bg-white/5 hover:bg-emerald-600">Core Services</a>
+            <a href="#faculty" onclick="toggleMobileMenu()" class="block py-2 px-4 rounded-xl border border-emerald-500 bg-white/5 hover:bg-emerald-600">Faculty Services</a>
+            <a href="#safety" onclick="toggleMobileMenu()" class="block py-2 px-4 rounded-xl border border-emerald-500 bg-white/5 hover:bg-emerald-600">Safety & Access</a>
+            <a href="#guidelines" onclick="toggleMobileMenu()" class="block py-2 px-4 rounded-xl border border-emerald-500 bg-white/5 hover:bg-emerald-600">Repair Request Guidelines</a>
+            <a href="#workflow" onclick="toggleMobileMenu()" class="block py-2 px-4 rounded-xl border border-emerald-500 bg-white/5 hover:bg-emerald-600">Workflow & Priorities</a>
+            <a href="#types" onclick="toggleMobileMenu()" class="block py-2 px-4 rounded-xl border border-emerald-500 bg-white/5 hover:bg-emerald-600">Types of Repair Requests</a>
+            <a href="#roles" onclick="toggleMobileMenu()" class="block py-2 px-4 rounded-xl border border-emerald-500 bg-white/5 hover:bg-emerald-600">Roles & Responsibilities</a>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="hero-container">
-            <div class="hero-image">
-                <img src="DIEZ, LF-formal.jpg" alt="Lovella Faith Banguis Diez Profile Picture">
-            </div>
-            <div class="hero-content">
-                <h1>Hi, I'm <br><span class="highlight">Lovella Faith Banguis Diez, DBM</span></h1>
-                <p class="subtitle">Doctor in Business Management | Executive Solution Specialist | Business Analytics & Information Systems Consultant</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Showcase Work</a>
-                    <a href="resume.pdf" download class="btn btn-primary">📄 Download Executive Resume (PDF)</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="section-title-wrapper center-title">
-            <h2>Executive Profile & Value Proposition</h2>
-        </div>
-        <div class="cyber-card">
-            <p>Results-driven Operations & Workflow Solution Specialist and Data Analytics Consultant bringing over a decade of high-level administrative governance, financial modeling, and information systems design into high-impact remote support. Holds a Doctorate in Business Management (DBM) and credentials as a Certified Data Analyst, Financial Analyst, Certified Research Development Consultant, Lean Six Sigma Yellow Belt, and ISO 9001:2015 Auditor. Transforms complex operational challenges into streamlined, automated workflows using Power BI, SQL queries, Monday.com, Google Workspace, Calendly, Zoom, and MS Excel VBA Macros—serving as a strategic remote solution partner for C-suite executives, optimizing business processes, engineering requisition tracking systems, and driving data-backed decision-making.</p>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="section-title-wrapper center-title">
-            <h2>Core Solution Capabilities & Tech Stack</h2>
-        </div>
-        <div class="skills-grid">
-            <div class="cyber-card skill-card">
-                <h3>Business Intelligence & Data Analytics</h3>
-                <p>Power BI & Interactive Dashboards, SQL & Relational Querying, IBM SPSS Statistical Consultancy (ANOVA, Regression, t-tests).</p>
-            </div>
-            <div class="cyber-card skill-card">
-                <h3>Workflow Automation & Systems Architecture</h3>
-                <p>Monday.com Board Architecture, MS Excel VBA Macros, System User Manual Architecture, Requisition Tracking Platforms.</p>
-            </div>
-            <div class="cyber-card skill-card">
-                <h3>Executive C-Suite Support</h3>
-                <p>Google Workspace & Calendly Administration, Strategic Remote Operations, Board Financial Modeling & Dashboards.</p>
-            </div>
-            <div class="cyber-card skill-card">
-                <h3>Quality Management & Compliance</h3>
-                <p>ISO 9001:2015 Internal Auditing, Lean Six Sigma Yellow Belt, Quality Assurance & SOP Architecture.</p>
-            </div>
-            <div class="cyber-card skill-card">
-                <h3>Financial Governance & Budgeting</h3>
-                <p>₱30M+ Institutional Budget Oversight, Automated Liquidation Mechanisms, Audit Turnaround Acceleration.</p>
-            </div>
-            <div class="cyber-card skill-card">
-                <h3>Custom Web Architecture & AI Integration</h3>
-                <p>HTML5, CSS3, Web Deployment, GitHub Pages, Version Control (Git), Generative AI Workflow Integration.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Showcase Work Section -->
-    <section id="projects" class="section">
-        <div class="section-title-wrapper center-title">
-            <h2>Featured Work & Technical Showcase</h2>
-        </div>
-        
-        <!-- Showcase Video Item -->
-        <div class="cyber-card featured-project-card">
-            <div class="video-wrapper">
-                <video controls preload="metadata" poster="DIEZ, LF-formal.jpg">
-                    <source src="INTRO2.mp4" type="video/mp4">
-                    Your browser does not support playing this video.
-                </video>
-            </div>
-            <div class="project-info" style="text-align: center;">
-                <h3>🎬 Executive Introduction & Overview</h3>
-                <p class="project-summary">A brief executive introduction outlining my background in institutional financial management, business intelligence, operational governance, and technical capabilities.</p>
-            </div>
-        </div>
-
-        <!-- Showcase Item 1: Executive Financial Modeling & Dashboards -->
-        <div class="cyber-card featured-project-card">
-            <div class="project-img-wrapper">
-                <img src="sample excel.png" alt="Executive Financial Dashboard Sample Work">
-            </div>
-            <div class="project-info">
-                <h3>Executive Financial Modeling & Dashboards</h3>
-                <p class="project-summary">Directed full departmental operations and institutional financial administration (₱30M+ annual budget), constructing integrated financial reporting and predictive data models presented during Board of Directors reviews.</p>
-                
-                <h4>Key Solution Deliverables:</h4>
-                <ul class="feature-list">
-                    <li><strong>Institutional Budget Oversight:</strong> Directed financial administration and reporting across a multi-million annual budget scale (₱30M+).</li>
-                    <li><strong>Board-Level Predictive Modeling:</strong> Constructed dynamic financial models and interactive statement dashboards for strategic C-suite reviews.</li>
-                    <li><strong>Workflow Engineering & Process Automation:</strong> Built automated liquidation, audit, and inventory tracking mechanisms in MS Excel using VBA Macros, accelerating audit turnaround by 40% with zero compliance errors.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Showcase Item 2: Task Tracker & Service Requisition Platform -->
-        <div class="cyber-card featured-project-card">
-            <div class="project-img-wrapper">
-                <img src="task tracker.png" alt="Task Tracker and Service Requisition Platform Sample Work">
-            </div>
-            <div class="project-info">
-                <h3>Task Tracker & Service Requisition Platform</h3>
-                <p class="project-summary">Commissioned for a discrete system development project by the General Administrative & Support Services Office to architect, code, and deploy a macro-enabled Task Tracker & Service Requisition Platform alongside digital forms, Google Workspace integrations, and automated SLA tracking.</p>
-                
-                <h4>Key Technical Deliverables:</h4>
-                <ul class="feature-list">
-                    <li><strong>System & Requisition Solution Architecture:</strong> Engineered a custom macro-enabled platform for end-to-end task tracking, service requisition logging, and operational monitoring.</li>
-                    <li><strong>Ecosystem & Workspace Integration:</strong> Seamlessly integrated digital request forms with Google Workspace workflows and automated SLA response monitoring.</li>
-                    <li><strong>Technical Documentation & System Manuals:</strong> Authored formal System User Manuals and operational SOPs detailing step-by-step navigation, data maintenance protocols, and system administration for non-technical users.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Showcase Item 3: Self-Engineered Digital Executive Portfolio -->
-        <div class="cyber-card featured-project-card">
-            <div class="project-info">
-                <h3>Self-Engineered Digital Executive Portfolio (This Website)</h3>
-                <p class="project-summary">This live website serves as a direct demonstration of my digital self-sufficiency, technical adaptability, and capability to leverage modern web standards and generative AI tools to build executive-grade technical deliverables independently.</p>
-                
-                <h4>Key Technical Highlights:</h4>
-                <ul class="feature-list">
-                    <li><strong>Modern Web Architecture:</strong> Custom-coded using foundational web technologies (HTML5 & CSS3) with responsive design for cross-device compatibility.</li>
-                    <li><strong>AI-Assisted Engineering Workflow:</strong> Architected and refined through prompt-driven AI collaboration to accelerate prototyping and code optimization.</li>
-                    <li><strong>Cloud Deployment & Version Control:</strong> Hosted on GitHub Pages with repository management and version tracking via Git workflows.</li>
-                    <li><strong>Accessibility & Executive UX:</strong> Features dark-mode aesthetics, custom CSS variables, font-awesome integrations, and smooth anchor scrolling.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Client & User Feedback Section -->
-    <section id="testimonials" class="section">
-        <div class="section-title-wrapper center-title">
-            <h2>Executive Client Feedback</h2>
-        </div>
-        <div class="cyber-card feedback-card">
-            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-            <p class="feedback-text">
-                This executive financial dashboard has made managing high-volume data virtually effortless. Its intuitive usability shines brightest during unexpected executive calls—allowing us to pull precise financial reports, live cash flow updates, and forward-looking projections in seconds.
-            </p>
-            <div class="feedback-divider"></div>
-            <div class="feedback-footer">
-                <div class="author-details">
-                    <p class="author-name">Allen Joy G.</p>
-                    <p class="author-title">Accounting and Finance Department Head | Kidapawan Doctors College Inc.</p>
-                </div>
-                <div class="verified-pill">
-                    <i class="fa-solid fa-check"></i> Verified System User
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="section-title-wrapper center-title">
-            <h2>Professional Experience & Solution Deliverables</h2>
-        </div>
-        <div class="experience-list">
+    <!-- HERO SECTION -->
+    <section id="hero" class="bg-hero-ndkc1 text-white relative overflow-hidden py-16 sm:py-24 border-b-8 border-ndkcGreen shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
             
-            <div class="cyber-card experience-card">
-                <h3>Information Systems & Statistical Research Consultant</h3>
-                <p class="meta"><strong>Independent Project Engagements</strong> | <em>2024 – Present</em></p>
-                <ul>
-                    <li><strong>System & Requisition Solution Architecture:</strong> Commissioned for a discrete system development project by the General Administrative & Support Services Office to architect, code, and deploy a macro-enabled Task Tracker & Service Requisition Platform alongside digital forms, Google Workspace integrations, and automated SLA tracking.</li>
-                    <li><strong>Business Intelligence & Data Solutions:</strong> Leverage Power BI, SQL queries, and IBM SPSS to execute advanced data modeling, quantitative research, and statistical analysis (ANOVA, regression, t-tests) for executive decision-making and academic thesis consultations.</li>
-                    <li><strong>Scheduling & Operations Automation:</strong> Configured automated scheduling and remote collaboration workflows using Calendly, Zoom, and Monday.com boards, streamlining client interactions and task delegation.</li>
-                    <li><strong>Technical Documentation & System Manuals:</strong> Authored comprehensive formal System User Manuals and operational SOPs, detailing step-by-step navigation, data maintenance protocols, and system administration for non-technical users.</li>
-                </ul>
+            <div class="space-y-2">
+                <h2 class="font-serifTagline italic text-3xl sm:text-5xl lg:text-6xl text-white font-medium tracking-tight drop-shadow-md">
+                    In the Spirit of St. Marcellin Champagnat
+                </h2>
+                <p class="font-serifTagline italic text-emerald-200 text-lg sm:text-2xl font-normal drop-shadow">
+                    Educating young people in faith and love since 1948
+                </p>
             </div>
 
-            <div class="cyber-card experience-card">
-                <h3>Accounting and Finance Department Head</h3>
-                <p class="meta"><strong>Kidapawan Doctors College Inc.</strong> | <em>Kidapawan City | January 2022 – August 2026</em></p>
-                <ul>
-                    <li><strong>Departmental Award Honors:</strong> Led the Accounting and Finance Department to achieve consecutive annual Outstanding Department Award honors consistently straight from 2022 through 2026.</li>
-                    <li><strong>Executive Financial Modeling & Dashboards:</strong> Directed full departmental operations and institutional financial administration (₱30M+ annual budget), constructing integrated financial reporting and predictive data models presented during Board of Directors reviews.</li>
-                    <li><strong>Workflow Engineering & Process Automation:</strong> Built automated liquidation, audit, and inventory tracking mechanisms in MS Excel using VBA Macros, accelerating audit turnaround by 40% with zero compliance errors.</li>
-                </ul>
+            <div class="w-full h-px bg-emerald-500/40 my-4"></div>
+
+            <div class="space-y-4">
+                <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-none drop-shadow-lg">
+                    GENERAL ADMINISTRATIVE<br>
+                    <span class="text-emerald-400">SUPPORT SERVICES</span> OFFICE
+                </h1>
+                
+                <p class="text-slate-100 text-base sm:text-xl max-w-3xl font-medium leading-relaxed drop-shadow">
+                    Managing and maintaining NDKC's physical facilities, administrative support services, security, safety, and campus operations to provide a safe, functional, and conducive learning environment.
+                </p>
             </div>
 
-            <div class="cyber-card experience-card">
-                <h3>Business Operations Administrator</h3>
-                <p class="meta"><strong>Banguis-Diez Farm, Garden, and AgriVet Supplies</strong> | <em>2018 – Present | Family-Owned Enterprise</em></p>
-                <ul>
-                    <li><strong>Operational Governance & Systems:</strong> Oversee inventory budgeting, digital record-keeping, vendor relations, and process optimization for private commercial operations.</li>
-                </ul>
+            <!-- ACTION BUTTONS -->
+            <div class="pt-4 flex flex-wrap gap-4">
+                <button type="button" onclick="openRequestModal()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-black text-base px-8 py-4 rounded-2xl shadow-2xl transition-all transform hover:-translate-y-1 flex items-center gap-3 border-2 border-emerald-400 cursor-pointer">
+                    <i class="fa-solid fa-file-pen text-xl"></i>
+                    <span>ONLINE REPAIR REQUEST</span>
+                </button>
+                <a href="#about" class="bg-white/10 hover:bg-white/20 text-white font-heading font-bold text-base px-8 py-4 rounded-2xl border border-white/30 backdrop-blur-md transition flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info"></i> Learn More
+                </a>
             </div>
 
-            <div class="cyber-card experience-card">
-                <h3>Marketing and Operations Officer</h3>
-                <p class="meta"><strong>Philippine Span Asia Carrier Corp.</strong> | <em>Davao City | January 2013 – February 2018</em></p>
-                <ul>
-                    <li><strong>Internal Advancement:</strong> Earned rapid promotion from frontline Teller to Marketing and Operations Officer based on exceptional administrative performance and leadership capacity.</li>
-                    <li><strong>Logistics Analytics:</strong> Evaluated logistics metrics via advanced spreadsheets to optimize delivery routes; supervised a cross-functional team of 60+ personnel.</li>
-                </ul>
-            </div>
-
-            <div class="cyber-card experience-card">
-                <h3>Shop Manager</h3>
-                <p class="meta"><strong>SST Laptop</strong> | <em>Davao City | October 2010 – July 2012</em></p>
-                <ul>
-                    <li><strong>Store Administration:</strong> Directed store administration, customer relations, sales performance reporting, and technical inventory control.</li>
-                </ul>
-            </div>
-
-            <div class="cyber-card experience-card">
-                <h3>Showroom Custodian</h3>
-                <p class="meta"><strong>Merit Stainless Steel Inc.</strong> | <em>Cebu City | March 2010 – September 2010</em></p>
-                <ul>
-                    <li><strong>Cataloging Operations:</strong> Managed product cataloging, sales counters, and administrative reporting for commercial product lines.</li>
-                </ul>
+            <!-- Quick Pillars -->
+            <div class="pt-8">
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+                    <div class="glass-panel p-4 rounded-xl text-center space-y-2 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-building text-emerald-300 text-2xl"></i>
+                        <span class="block text-xs font-heading font-bold uppercase leading-tight">Facilities Management</span>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl text-center space-y-2 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-screwdriver-wrench text-emerald-300 text-2xl"></i>
+                        <span class="block text-xs font-heading font-bold uppercase leading-tight">Maintenance Services</span>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl text-center space-y-2 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-broom text-emerald-300 text-2xl"></i>
+                        <span class="block text-xs font-heading font-bold uppercase leading-tight">Housekeeping Services</span>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl text-center space-y-2 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-tree text-emerald-300 text-2xl"></i>
+                        <span class="block text-xs font-heading font-bold uppercase leading-tight">Grounds Maintenance</span>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl text-center space-y-2 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-shield-halved text-emerald-300 text-2xl"></i>
+                        <span class="block text-xs font-heading font-bold uppercase leading-tight">Security Coordination</span>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl text-center space-y-2 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-hard-hat text-emerald-300 text-2xl"></i>
+                        <span class="block text-xs font-heading font-bold uppercase leading-tight">Safety & Emergency</span>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl text-center space-y-2 hover:border-emerald-400 transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-boxes-stacked text-emerald-300 text-2xl"></i>
+                        <span class="block text-xs font-heading font-bold uppercase leading-tight">Property & Assets</span>
+                    </div>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Awards, Recognitions & Affiliations Section -->
-    <section id="awards" class="section">
-        <div class="section-title-wrapper center-title">
-            <h2>Awards, Recognitions & Affiliations</h2>
-        </div>
-        
-        <div class="skills-grid">
-            <!-- Individual Recognitions Card -->
-            <div class="cyber-card skill-card">
-                <h3>🏅 Individual Professional Honors</h3>
-                <ul class="cert-list">
-                    <li><strong>KDCI Most Outstanding Non-Teaching Head (Admin)</strong> – 2026</li>
-                    <li><strong>Presenter</strong> – UIC International Research Forum (2026)</li>
-                    <li><strong>Resource Speaker</strong> – KDCI Student Leaders Leadership Training (2026)</li>
-                    <li><strong>Resource Speaker</strong> – DOST Training Workshop for Basic Business Incubation (2025)</li>
-                    <li><strong>KDCI Best Performing Non-Teaching Employee Rank 2</strong> – 2025</li>
-                    <li><strong>KDCI Service Loyalty Award (3 Years)</strong> – 2025</li>
-                    <li><strong>Resource Speaker</strong> – KDCI Student Leaders Team Building (2025)</li>
-                    <li><strong>Resource Speaker</strong> – DOST Training Workshop for Basic Business Incubation (2024)</li>
-                    <li><strong>KDCI Most Diligent Employee (Admin)</strong> – 2024</li>
-                    <li><strong>KDCI Best Performing Employee</strong> – 2022</li>
-                    <li><strong>Member</strong> – Educators Research & Innovation Organization Inc. (2026)</li>
-                    <li><strong>Alpha Delta Sigma Fraternity & Sorority</strong> – 2007</li>
-                </ul>
+    <!-- MAIN BODY CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20 flex-grow">
+
+        <!-- SECTION 1: WHO WE ARE -->
+        <section id="about" class="bg-whoweare-ndkc2 rounded-3xl shadow-xl border border-slate-200 overflow-hidden relative p-8 sm:p-12 space-y-10">
+            <div class="border-b-2 border-emerald-600 pb-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-8 bg-ndkcGreen rounded-full"></div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-slate-900">WHO WE ARE — About the GASS Office</h2>
+                </div>
+                <i class="fa-solid fa-users-gear text-ndkcGreen text-3xl"></i>
             </div>
 
-            <!-- Departmental Leadership Awards Card -->
-            <div class="cyber-card skill-card">
-                <h3>🏆 Departmental Awards (Under My Leadership)</h3>
-                <p style="color: var(--neon-green); font-size: 0.95rem; margin-bottom: 1rem;">Recognitions awarded to the Finance & Accounting Department under direct supervisory direction (2022–2026):</p>
-                <ul class="cert-list">
-                    <li><strong>Most Diligent Department (Admin) Rank 2</strong> – 2026</li>
-                    <li><strong>Most Diligent Department (Admin)</strong> – 2025</li>
-                    <li><strong>Best in Customer Service</strong> – 2025</li>
-                    <li><strong>Most Diligent (Department)</strong> – 2024</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="bg-white/95 p-8 rounded-2xl border-l-8 border-ndkcGreen shadow-md space-y-4">
+                        <div class="flex items-center gap-3 text-ndkcGreen font-heading font-extrabold text-xl">
+                            <i class="fa-solid fa-bullseye text-emerald-600 text-2xl"></i>
+                            <span>OUR ROLE</span>
+                        </div>
+                        <p class="text-slate-700 text-base sm:text-lg leading-relaxed font-medium">
+                            The <strong class="text-ndkcGreen">General Administrative Support Services (GASS) Office</strong> is responsible for managing and maintaining <strong>NDKC's physical facilities</strong>, administrative support services, and campus operations to provide a safe, functional, and conducive learning environment.
+                        </p>
+                    </div>
 
-    <!-- Education & Credentials Section -->
-    <section id="education" class="section">
-        <div class="section-title-wrapper center-title">
-            <h2>Education & Credentials</h2>
-        </div>
-        
-        <div class="skills-grid">
-            <div class="cyber-card skill-card">
-                <h3>Doctor in Business Management (DBM)</h3>
-                <p>University of the Immaculate Conception, Davao City<br><em>Dissertation: Caught in the Scheme: A Multiple Case Study on the Experiences and Mindsets of Business Professionals Victimized by Ponzi Investments</em></p>
-            </div>
-            <div class="cyber-card skill-card">
-                <h3>Professional Teaching Certificate (PTC)</h3>
-                <p>Notre Dame of Kidapawan College, Kidapawan City<br><em>Pursuing Major in Mathematics (Focus: Advanced Mathematics Education, Educational Technology & Pedagogical Design)</em></p>
-            </div>
-            <div class="cyber-card skill-card">
-                <h3>Master in Business Administration (MBA)</h3>
-                <p>Notre Dame of Dadiangas University, General Santos City<br><em>Focus: Strategic Management & Operational Governance</em></p>
-            </div>
-            <div class="cyber-card skill-card">
-                <h3>BS in Commerce - Major in Marketing</h3>
-                <p>Notre Dame of Kidapawan College, Kidapawan City</p>
-            </div>
-        </div>
+                    <div class="bg-white/90 p-8 rounded-2xl border border-slate-200 shadow-sm space-y-5">
+                        <h3 class="font-heading font-bold text-sm uppercase tracking-wider text-slate-500 flex items-center gap-2">
+                            <i class="fa-solid fa-heart text-emerald-600"></i> WE SUPPORT OUR CAMPUS COMMUNITY:
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            <div class="bg-emerald-50 border border-emerald-200 p-5 rounded-2xl text-center space-y-2 hover:bg-emerald-100 transition">
+                                <i class="fa-solid fa-chalkboard-user text-ndkcGreen text-3xl"></i>
+                                <span class="block font-heading font-black text-sm text-ndkcGreenDark">FACULTY</span>
+                            </div>
+                            <div class="bg-emerald-50 border border-emerald-200 p-5 rounded-2xl text-center space-y-2 hover:bg-emerald-100 transition">
+                                <i class="fa-solid fa-user-graduate text-ndkcGreen text-3xl"></i>
+                                <span class="block font-heading font-black text-sm text-ndkcGreenDark">STUDENTS</span>
+                            </div>
+                            <div class="bg-emerald-50 border border-emerald-200 p-5 rounded-2xl text-center space-y-2 hover:bg-emerald-100 transition">
+                                <i class="fa-solid fa-id-badge text-ndkcGreen text-3xl"></i>
+                                <span class="block font-heading font-black text-sm text-ndkcGreenDark">STAFF</span>
+                            </div>
+                            <div class="bg-emerald-50 border border-emerald-200 p-5 rounded-2xl text-center space-y-2 hover:bg-emerald-100 transition">
+                                <i class="fa-solid fa-handshake text-ndkcGreen text-3xl"></i>
+                                <span class="block font-heading font-black text-sm text-ndkcGreenDark">VISITORS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="cyber-card certifications-container" style="margin-top: 1.5rem;">
-            <h3>Certifications & Professional Credentials</h3>
-            <ul class="cert-list">
-                <li><strong>Certified Research Data Analyst</strong> – Data Analytics Institute (2025)</li>
-                <li><strong>Certified Financial Analyst</strong> – Financial Analyst Board (2023)</li>
-                <li><strong>Certified Research Development Consultant</strong> – RRCC (2026)</li>
-                <li><strong>ISO 9001:2015 Trained Internal Auditor</strong> – Quality Management Systems</li>
-                <li><strong>Lean Six Sigma Yellow Belt Certification</strong> – Quality Management Institute (2023)</li>
-                <li><strong>Advanced Statistical Analysis in SPSS Certification</strong></li>
-                <li><strong>Safety Officer 2 (SO2) Certification</strong> – OSHC (2021)</li>
-                <li><strong>Civil Service Professional Eligibility</strong> – Civil Service Commission (May 2018)</li>
-            </ul>
-        </div>
-    </section>
+                <div class="lg:col-span-5 bg-white/95 p-8 rounded-2xl border border-slate-200 shadow-md text-center space-y-6">
+                    <span class="text-xs font-heading font-bold uppercase tracking-widest text-emerald-700">Centralized Infrastructure</span>
+                    <h4 class="font-heading font-extrabold text-slate-900 text-lg">GASS Operational Hub</h4>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="section-title-wrapper center-title">
-            <h2>Get in Touch</h2>
-        </div>
-        <div class="cyber-card" style="text-align: center;">
-            <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #f8fafc;">
-                Kidapawan City, Philippines &nbsp;|&nbsp; <i class="fa-solid fa-phone" style="color: var(--border-neon);"></i> +63 938 198 2327
-            </p>
-            
-            <!-- Large Colorful Brand Buttons -->
-            <div class="contact-icon-links">
-                <a href="mailto:diezlovefaith05@gmail.com" title="Email Me" class="icon-btn email-btn">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-                <a href="https://linkedin.com/in/lovellafaithdiez" target="_blank" title="LinkedIn Profile" class="icon-btn linkedin-btn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="https://wa.me/639381982327" target="_blank" title="WhatsApp" class="icon-btn whatsapp-btn">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-                <a href="viber://chat?number=%2B639381982327" title="Viber" class="icon-btn viber-btn">
-                    <i class="fa-brands fa-viber"></i>
-                </a>
+                    <div class="relative flex flex-col items-center justify-center p-2">
+                        <div class="w-36 h-36 bg-ndkcGreen text-white rounded-full flex flex-col items-center justify-center text-center p-3 shadow-xl border-4 border-emerald-500 z-10">
+                            <i class="fa-solid fa-building-circle-check text-3xl text-emerald-300 mb-1"></i>
+                            <span class="font-heading font-black text-sm leading-none">GASS</span>
+                            <span class="text-[10px] font-semibold text-emerald-200 uppercase mt-1">Central Support</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 w-full mt-6 text-xs font-heading font-bold text-slate-800">
+                            <div class="bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center gap-2 shadow-sm">
+                                <i class="fa-solid fa-building text-ndkcGreen"></i> Facilities Mgmt
+                            </div>
+                            <div class="bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center gap-2 shadow-sm">
+                                <i class="fa-solid fa-wrench text-ndkcGreen"></i> Maintenance
+                            </div>
+                            <div class="bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center gap-2 shadow-sm">
+                                <i class="fa-solid fa-shield text-ndkcGreen"></i> Security
+                            </div>
+                            <div class="bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center gap-2 shadow-sm">
+                                <i class="fa-solid fa-vest-patches text-ndkcGreen"></i> Safety
+                            </div>
+                            <div class="bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center gap-2 shadow-sm">
+                                <i class="fa-solid fa-van-shuttle text-ndkcGreen"></i> Transportation
+                            </div>
+                            <div class="bg-slate-100 p-3 rounded-xl border border-slate-200 flex items-center gap-2 shadow-sm">
+                                <i class="fa-solid fa-boxes-packing text-ndkcGreen"></i> Assets & Property
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: OUR CORE SERVICES -->
+        <section id="services" class="space-y-8">
+            <div class="flex items-center justify-between border-b-2 border-slate-200 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-8 bg-ndkcGreen rounded-full"></div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-slate-900">OUR CORE SERVICES — What We Do</h2>
+                </div>
+                <span class="hidden sm:inline-block text-xs font-heading font-extrabold text-ndkcGreen uppercase tracking-wider">8 Primary Divisions</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-ndkcGreen transition space-y-4 group">
+                    <div class="flex justify-between items-center">
+                        <div class="w-12 h-12 bg-ndkcGreen text-white font-heading font-black rounded-xl flex items-center justify-center text-lg shadow">1</div>
+                        <i class="fa-solid fa-school text-slate-300 text-3xl group-hover:text-ndkcGreen transition"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-slate-900 text-lg">Facilities Management</h3>
+                    <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside font-medium">
+                        <li>Classrooms</li>
+                        <li>Offices</li>
+                        <li>Campus Buildings</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-ndkcGreen transition space-y-4 group">
+                    <div class="flex justify-between items-center">
+                        <div class="w-12 h-12 bg-ndkcGreen text-white font-heading font-black rounded-xl flex items-center justify-center text-lg shadow">2</div>
+                        <i class="fa-solid fa-gears text-slate-300 text-3xl group-hover:text-ndkcGreen transition"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-slate-900 text-lg">Maintenance Services</h3>
+                    <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside font-medium">
+                        <li>Electrical systems</li>
+                        <li>Plumbing</li>
+                        <li>Carpentry</li>
+                        <li>Air-conditioning</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-ndkcGreen transition space-y-4 group">
+                    <div class="flex justify-between items-center">
+                        <div class="w-12 h-12 bg-ndkcGreen text-white font-heading font-black rounded-xl flex items-center justify-center text-lg shadow">3</div>
+                        <i class="fa-solid fa-sparkles text-slate-300 text-3xl group-hover:text-ndkcGreen transition"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-slate-900 text-lg">Housekeeping</h3>
+                    <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside font-medium">
+                        <li>Cleaning operations</li>
+                        <li>Waste Management</li>
+                        <li>Sanitation protocols</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-ndkcGreen transition space-y-4 group">
+                    <div class="flex justify-between items-center">
+                        <div class="w-12 h-12 bg-ndkcGreen text-white font-heading font-black rounded-xl flex items-center justify-center text-lg shadow">4</div>
+                        <i class="fa-solid fa-leaf text-slate-300 text-3xl group-hover:text-ndkcGreen transition"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-slate-900 text-lg">Grounds Maintenance</h3>
+                    <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside font-medium">
+                        <li>Campus Landscaping</li>
+                        <li>Grounds cleanliness</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: FACULTY SERVICES -->
+        <section id="faculty" class="bg-faculty-ndkc3 rounded-3xl shadow-xl border border-emerald-900 text-white overflow-hidden p-8 sm:p-12 space-y-10">
+            <div class="border-b-2 border-emerald-500 pb-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-8 bg-emerald-400 rounded-full"></div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-white">FACULTY SERVICES — Services You May Need</h2>
+                </div>
+                <i class="fa-solid fa-chalkboard-user text-emerald-400 text-3xl"></i>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-emerald-400 transition group">
+                    <div class="w-14 h-14 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-3xl shadow-md group-hover:scale-110 transition">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-white text-xl">Facility Reservations</h3>
+                    <ul class="text-sm text-slate-200 space-y-2 list-disc list-inside font-medium">
+                        <li>Student Center</li>
+                        <li>Gymnasium</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-emerald-400 transition group">
+                    <div class="w-14 h-14 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-3xl shadow-md group-hover:scale-110 transition">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-white text-xl">Maintenance Requests</h3>
+                    <ul class="text-sm text-slate-200 space-y-2 list-disc list-inside font-medium">
+                        <li>Broken lights</li>
+                        <li>Air-conditioning concerns</li>
+                        <li>Plumbing issues</li>
+                        <li>Furniture repairs</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-emerald-400 transition group">
+                    <div class="w-14 h-14 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-3xl shadow-md group-hover:scale-110 transition">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-white text-xl">Equipment Requests</h3>
+                    <ul class="text-sm text-slate-200 space-y-2 list-disc list-inside font-medium">
+                        <li>Tables</li>
+                        <li>Chairs</li>
+                        <li>Audio-Visual Equipment</li>
+                        <li>Sound System</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl space-y-4 hover:border-emerald-400 transition group">
+                    <div class="w-14 h-14 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-3xl shadow-md group-hover:scale-110 transition">
+                        <i class="fa-solid fa-boxes-packing"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-white text-xl">Property Concerns</h3>
+                    <ul class="text-sm text-slate-200 space-y-2 list-disc list-inside font-medium">
+                        <li>Inventory</li>
+                        <li>Accountability</li>
+                        <li>Transfer</li>
+                        <li>Disposal</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CAMPUS SAFETY & SECURITY -->
+        <section id="safety" class="bg-safety-ndkc5 rounded-3xl shadow-2xl border border-slate-800 text-white overflow-hidden p-8 sm:p-12 space-y-12">
+            <div class="border-b-2 border-emerald-500 pb-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-8 bg-emerald-400 rounded-full"></div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-white">CAMPUS SAFETY & SECURITY GUIDELINES</h2>
+                </div>
+                <i class="fa-solid fa-shield-halved text-emerald-400 text-3xl"></i>
+            </div>
+
+            <div class="space-y-6">
+                <h3 class="font-heading font-extrabold text-xl text-emerald-300 uppercase tracking-wider flex items-center gap-3">
+                    <i class="fa-solid fa-heart-pulse text-2xl"></i> CAMPUS SAFETY — YOUR SAFETY MATTERS
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-panel p-8 rounded-2xl space-y-4">
+                        <h4 class="font-heading font-extrabold text-white text-lg border-b border-white/20 pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-shield-cat text-emerald-400"></i> Emergency Preparedness
+                        </h4>
+                        <ul class="text-sm text-slate-200 space-y-3 font-medium">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-fire text-red-400 text-lg"></i> Fire Safety Protocols</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-house-chimney-crack text-amber-400 text-lg"></i> Earthquake Response</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-person-walking-arrow-right text-emerald-400 text-lg"></i> Evacuation Procedures</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-clipboard-check text-blue-400 text-lg"></i> Incident Reporting</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-kit-medical text-rose-400 text-lg"></i> First Aid Response</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-2xl space-y-4">
+                        <h4 class="font-heading font-extrabold text-white text-lg border-b border-white/20 pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-user-check text-emerald-400"></i> Faculty Responsibilities
+                        </h4>
+                        <ul class="text-sm text-slate-200 space-y-3 font-medium">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-map-location-dot text-emerald-400 text-lg"></i> Know evacuation routes</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-triangle-exclamation text-amber-400 text-lg"></i> Report hazards immediately</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-people-group text-blue-400 text-lg"></i> Participate in emergency drills</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-door-open text-emerald-400 text-lg"></i> Keep exits unobstructed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-950/80 border border-emerald-500/50 p-4 rounded-2xl text-center text-sm font-heading font-extrabold text-emerald-200 uppercase tracking-widest">
+                    Safety Motto: Be Prepared. Be Aware. Be Safe. | Together, we create a safe and caring campus for everyone.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: FACILITY REPAIR REQUEST GUIDELINES -->
+        <section id="guidelines" class="bg-repair-ndkc4 rounded-3xl shadow-xl border border-slate-200 overflow-hidden p-8 sm:p-12 space-y-10">
+            <div class="border-b-2 border-emerald-600 pb-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-8 bg-ndkcGreen rounded-full"></div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-slate-900">FACILITY REPAIR REQUEST GUIDELINES</h2>
+                </div>
+                <i class="fa-solid fa-clipboard-check text-ndkcGreen text-3xl"></i>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-white p-8 rounded-2xl border-l-8 border-ndkcGreen shadow-sm space-y-3">
+                        <h3 class="font-heading font-extrabold text-sm uppercase text-ndkcGreen flex items-center gap-2">
+                            <i class="fa-solid fa-bullseye text-emerald-600"></i> PURPOSE
+                        </h3>
+                        <p class="text-slate-700 text-base leading-relaxed font-medium">
+                            To provide a standardized procedure for requesting and processing repairs to ensure campus facilities remain safe, functional, and well-maintained.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                        <h3 class="font-heading font-extrabold text-sm uppercase text-ndkcGreen flex items-center gap-2">
+                            <i class="fa-solid fa-users text-emerald-600"></i> WHO MAY SUBMIT REQUESTS?
+                        </h3>
+                        <ul class="text-sm text-slate-700 space-y-3 font-medium">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i> Academic Departments</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i> Administrative Offices</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i> Support Units</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i> Other Authorized Campus Offices</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                    <h3 class="font-heading font-extrabold text-sm uppercase text-ndkcGreen flex items-center gap-2 border-b pb-3">
+                        <i class="fa-solid fa-list-check text-emerald-600"></i> GENERAL GUIDELINES
+                    </h3>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <span class="w-8 h-8 bg-ndkcGreen text-white font-heading font-black text-sm rounded-full flex items-center justify-center shrink-0 mt-1">1</span>
+                            <p class="text-sm text-slate-700 font-medium leading-relaxed">
+                                <strong>Submit a Facility Repair Request Form to GASS.</strong> Use our online web portal requisition form.
+                            </p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="w-8 h-8 bg-ndkcGreen text-white font-heading font-black text-sm rounded-full flex items-center justify-center shrink-0 mt-1">2</span>
+                            <p class="text-sm text-slate-700 font-medium leading-relaxed">
+                                <strong>Requests must be endorsed by the Head of Office</strong> (except in emergency situations).
+                            </p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="w-8 h-8 bg-ndkcGreen text-white font-heading font-black text-sm rounded-full flex items-center justify-center shrink-0 mt-1">3</span>
+                            <p class="text-sm text-slate-700 font-medium leading-relaxed">
+                                <strong>Provide complete details</strong> of the problem and its precise campus location.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIGITAL ACCESS & QR CODE SECTION -->
+            <div class="bg-white p-8 rounded-3xl border-2 border-emerald-600 shadow-md space-y-8">
+                <div class="text-center space-y-2">
+                    <span class="bg-emerald-100 text-emerald-800 font-heading font-black text-xs uppercase px-4 py-1.5 rounded-full">DIGITAL REQUISITION PORTAL</span>
+                    <h3 class="font-heading font-black text-2xl sm:text-3xl text-slate-900">Scan QR Code or Submit Online</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-5 text-center space-y-4 bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                        <h4 class="font-heading font-bold text-slate-900 text-sm uppercase">Mobile QR Code Portal</h4>
+                        
+                        <div class="relative inline-block group cursor-pointer" onclick="zoomQR()">
+                            <div class="bg-white p-3 rounded-2xl shadow-md border-2 border-ndkcGreen">
+                                <img src="NDKC repairs request form.png" onerror="this.onerror=null; this.src='https://placehold.co/250x250/004822/FFFFFF?text=SCAN+QR+FORM';" alt="NDKC Repair Request QR Code" class="w-52 h-52 object-contain mx-auto rounded-xl">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-7 space-y-5 bg-emerald-50/70 p-8 rounded-2xl border border-emerald-200">
+                        <div class="flex items-center gap-3 text-ndkcGreen font-heading font-extrabold text-lg">
+                            <i class="fa-solid fa-laptop-code text-2xl text-emerald-600"></i>
+                            <span>Online Repair Request Portal</span>
+                        </div>
+
+                        <p class="text-sm text-slate-700 leading-relaxed font-medium">
+                            Submit your facility maintenance tickets directly to our Google Forms portal. Every submitted ticket is automatically recorded with a unique ascending serial number.
+                        </p>
+
+                        <div class="pt-2 flex flex-col sm:flex-row gap-4">
+                            <button type="button" onclick="openRequestModal()" class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-heading font-black py-4 px-8 rounded-2xl transition shadow-lg flex items-center justify-center gap-3 cursor-pointer">
+                                <i class="fa-solid fa-paper-plane text-base"></i>
+                                <span>ONLINE REPAIR REQUEST</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: WORKFLOW & ROADMAP -->
+        <section id="workflow" class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden p-8 sm:p-12 space-y-10">
+            <div class="border-b-2 border-emerald-600 pb-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-8 bg-ndkcGreen rounded-full"></div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-slate-900">REPAIR REQUEST WORKFLOW</h2>
+                </div>
+                <i class="fa-solid fa-road text-ndkcGreen text-3xl"></i>
+            </div>
+
+            <div class="space-y-3">
+                <h3 class="font-heading font-extrabold text-xl text-slate-900 uppercase tracking-wide flex items-center gap-2">
+                    <i class="fa-solid fa-route text-emerald-600"></i> 10-Step Repair Request Process Roadmap
+                </h3>
+                <p class="text-sm text-slate-600 font-medium">Follow our systematic 10-step process along the campus maintenance roadmap from issue identification to final request closure.</p>
+            </div>
+
+            <!-- 10-STEP ROADMAP GRID -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 pt-4">
+                
+                <!-- Step 1 -->
+                <div class="bg-gradient-to-br from-emerald-950 via-ndkcGreenDark to-ndkcGreen text-white p-6 rounded-3xl shadow-xl border-2 border-emerald-500/60 flex flex-col justify-between space-y-4 hover:scale-105 transition duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-emerald-500/30 text-emerald-200 text-xs font-heading font-black px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-400/30">Step 1</span>
+                        <div class="w-12 h-12 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-magnifying-glass-location"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-heading font-bold text-white text-sm uppercase">Identify Problem</h4>
+                        <p class="text-xs text-slate-200 font-medium leading-relaxed">Spot and inspect facility or maintenance issues.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-gradient-to-br from-emerald-950 via-ndkcGreenDark to-ndkcGreen text-white p-6 rounded-3xl shadow-xl border-2 border-emerald-500/60 flex flex-col justify-between space-y-4 hover:scale-105 transition duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-emerald-500/30 text-emerald-200 text-xs font-heading font-black px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-400/30">Step 2</span>
+                        <div class="w-12 h-12 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-file-pen"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-heading font-bold text-white text-sm uppercase">Submit Request</h4>
+                        <p class="text-xs text-slate-200 font-medium leading-relaxed">Submit Repair Request Form via web portal or slip.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-gradient-to-br from-emerald-950 via-ndkcGreenDark to-ndkcGreen text-white p-6 rounded-3xl shadow-xl border-2 border-emerald-500/60 flex flex-col justify-between space-y-4 hover:scale-105 transition duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-emerald-500/30 text-emerald-200 text-xs font-heading font-black px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-400/30">Step 3</span>
+                        <div class="w-12 h-12 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-heading font-bold text-white text-sm uppercase">Log Request</h4>
+                        <p class="text-xs text-slate-200 font-medium leading-relaxed">GASS receives & logs request into tracking system with unique ID.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-gradient-to-br from-emerald-950 via-ndkcGreenDark to-ndkcGreen text-white p-6 rounded-3xl shadow-xl border-2 border-emerald-500/60 flex flex-col justify-between space-y-4 hover:scale-105 transition duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-emerald-500/30 text-emerald-200 text-xs font-heading font-black px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-400/30">Step 4</span>
+                        <div class="w-12 h-12 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-helmet-safety"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-heading font-bold text-white text-sm uppercase">Site Assessment</h4>
+                        <p class="text-xs text-slate-200 font-medium leading-relaxed">Site inspection and evaluation by maintenance team.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="bg-gradient-to-br from-emerald-950 via-ndkcGreenDark to-ndkcGreen text-white p-6 rounded-3xl shadow-xl border-2 border-emerald-500/60 flex flex-col justify-between space-y-4 hover:scale-105 transition duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-emerald-500/30 text-emerald-200 text-xs font-heading font-black px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-400/30">Step 5</span>
+                        <div class="w-12 h-12 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-heading font-bold text-white text-sm uppercase">Prioritize & Approve</h4>
+                        <p class="text-xs text-slate-200 font-medium leading-relaxed">Prioritize and approve request (Emergency, Urgent, Routine).</p>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="bg-gradient-to-br from-emerald-950 via-ndkcGreenDark to-ndkcGreen text-white p-6 rounded-3xl shadow-xl border-2 border-emerald-500/60 flex flex-col justify-between space-y-4 hover:scale-105 transition duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-emerald-500/30 text-emerald-200 text-xs font-heading font-black px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-400/30">Step 6</span>
+                        <div class="w-12 h-12 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-heading font-bold text-white text-sm uppercase">Schedule Repair</h4>
+                        <p class="text-xs text-slate-200 font-medium leading-relaxed">Schedule repair works and allocate skilled technicians.</p>
+                    </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="bg-gradient-to-br from-emerald-950 via-ndkcGreenDark to-ndkcGreen text-white p-6 rounded-3xl shadow-xl border-2 border-emerald-500/60 flex flex-col justify-between space-y-4 hover:scale-105 transition duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-emerald-500/30 text-emerald-200 text-xs font-heading font-black px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-400/30">Step 7</span>
+                        <div class="w-12 h-12 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-heading font-bold text-white text-sm uppercase">Execution</h4>
+                        <p class="text-xs text-slate-200 font-medium leading-relaxed">Repair and maintenance execution following standards.</p>
+                    </div>
+                </div>
+
+                <!-- Step 8 -->
+                <div class="bg-gradient-to-br from-emerald-950 via-ndkcGreenDark to-ndkcGreen text-white p-6 rounded-3xl shadow-xl border-2 border-emerald-500/60 flex flex-col justify-between space-y-4 hover:scale-105 transition duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-emerald-500/30 text-emerald-200 text-xs font-heading font-black px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-400/30">Step 8</span>
+                        <div class="w-12 h-12 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-square-check"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-heading font-bold text-white text-sm uppercase">Final Inspection</h4>
+                        <p class="text-xs text-slate-200 font-medium leading-relaxed">Final inspection conducted by GASS supervisor.</p>
+                    </div>
+                </div>
+
+                <!-- Step 9 -->
+                <div class="bg-gradient-to-br from-emerald-950 via-ndkcGreenDark to-ndkcGreen text-white p-6 rounded-3xl shadow-xl border-2 border-emerald-500/60 flex flex-col justify-between space-y-4 hover:scale-105 transition duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-emerald-500/30 text-emerald-200 text-xs font-heading font-black px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-400/30">Step 9</span>
+                        <div class="w-12 h-12 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-heading font-bold text-white text-sm uppercase">Office Acceptance</h4>
+                        <p class="text-xs text-slate-200 font-medium leading-relaxed">Office acceptance confirming satisfactory completion.</p>
+                    </div>
+                </div>
+
+                <!-- Step 10 -->
+                <div class="bg-gradient-to-br from-emerald-950 via-ndkcGreenDark to-ndkcGreen text-white p-6 rounded-3xl shadow-xl border-2 border-emerald-500/60 flex flex-col justify-between space-y-4 hover:scale-105 transition duration-300">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-emerald-500/30 text-emerald-200 text-xs font-heading font-black px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-400/30">Step 10</span>
+                        <div class="w-12 h-12 bg-emerald-500 text-ndkcGreenDark rounded-2xl flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-heading font-bold text-white text-sm uppercase">Request Closed</h4>
+                        <p class="text-xs text-slate-200 font-medium leading-relaxed">Request closed and maintenance ticket archived.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: TYPES OF REPAIR REQUESTS -->
+        <section id="types" class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden p-8 sm:p-12 space-y-10">
+            <div class="border-b-2 border-emerald-600 pb-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-8 bg-ndkcGreen rounded-full"></div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-slate-900">TYPES OF REPAIR REQUESTS</h2>
+                </div>
+                <i class="fa-solid fa-screwdriver-wrench text-ndkcGreen text-3xl"></i>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- A. Emergency Repairs -->
+                <div class="bg-red-50/70 border border-red-200 p-6 rounded-2xl space-y-4 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-red-800 font-heading font-extrabold text-lg border-b border-red-200 pb-2">
+                            <i class="fa-solid fa-triangle-exclamation text-red-600 text-xl"></i>
+                            <span>A. Emergency Repairs</span>
+                        </div>
+                        <p class="text-xs text-slate-700 font-medium leading-relaxed">
+                            Repairs that pose an immediate threat to life, safety, or property.
+                        </p>
+                        <div class="space-y-1">
+                            <span class="block text-xs font-heading font-bold text-red-900 uppercase">Examples:</span>
+                            <ul class="text-xs text-slate-700 space-y-1.5 list-disc list-inside font-medium">
+                                <li>Electrical short circuits</li>
+                                <li>Broken water pipes causing flooding</li>
+                                <li>Structural damage</li>
+                                <li>Fire safety equipment malfunction</li>
+                                <li>Broken doors that compromise security</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-red-200/60 bg-red-100/60 -mx-6 -mb-6 p-4 rounded-b-2xl">
+                        <span class="block text-[11px] font-heading font-black text-red-900 uppercase">Response Time:</span>
+                        <p class="text-xs text-red-800 font-semibold mt-0.5">Immediate (within 24 hours whenever possible)</p>
+                    </div>
+                </div>
+
+                <!-- B. Urgent Repairs -->
+                <div class="bg-amber-50/70 border border-amber-200 p-6 rounded-2xl space-y-4 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-amber-900 font-heading font-extrabold text-lg border-b border-amber-200 pb-2">
+                            <i class="fa-solid fa-bolt text-amber-600 text-xl"></i>
+                            <span>B. Urgent Repairs</span>
+                        </div>
+                        <p class="text-xs text-slate-700 font-medium leading-relaxed">
+                            Repairs that significantly affect office operations but do not present immediate danger.
+                        </p>
+                        <div class="space-y-1">
+                            <span class="block text-xs font-heading font-bold text-amber-950 uppercase">Examples:</span>
+                            <ul class="text-xs text-slate-700 space-y-1.5 list-disc list-inside font-medium">
+                                <li>Air-conditioning failure</li>
+                                <li>Plumbing leaks</li>
+                                <li>Broken windows</li>
+                                <li>Damaged office furniture essential for work</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-amber-200/60 bg-amber-100/60 -mx-6 -mb-6 p-4 rounded-b-2xl">
+                        <span class="block text-[11px] font-heading font-black text-amber-950 uppercase">Response Time:</span>
+                        <p class="text-xs text-amber-900 font-semibold mt-0.5">2–5 working days</p>
+                    </div>
+                </div>
+
+                <!-- C. Routine Repairs -->
+                <div class="bg-emerald-50/70 border border-emerald-200 p-6 rounded-2xl space-y-4 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-emerald-900 font-heading font-extrabold text-lg border-b border-emerald-200 pb-2">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-xl"></i>
+                            <span>C. Routine Repairs</span>
+                        </div>
+                        <p class="text-xs text-slate-700 font-medium leading-relaxed">
+                            Minor repairs and preventive maintenance.
+                        </p>
+                        <div class="space-y-1">
+                            <span class="block text-xs font-heading font-bold text-emerald-950 uppercase">Examples:</span>
+                            <ul class="text-xs text-slate-700 space-y-1.5 list-disc list-inside font-medium">
+                                <li>Replacement of light bulbs</li>
+                                <li>Door adjustments</li>
+                                <li>Cabinet repairs</li>
+                                <li>Painting touch-ups</li>
+                                <li>Ceiling tile replacement</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-emerald-200/60 bg-emerald-100/60 -mx-6 -mb-6 p-4 rounded-b-2xl">
+                        <span class="block text-[11px] font-heading font-black text-emerald-950 uppercase">Response Time:</span>
+                        <p class="text-xs text-emerald-900 font-semibold mt-0.5">Within 10–15 working days depending on workload and availability of materials.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: ROLES AND RESPONSIBILITIES -->
+        <section id="roles" class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden p-8 sm:p-12 space-y-10">
+            <div class="border-b-2 border-emerald-600 pb-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-8 bg-ndkcGreen rounded-full"></div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-slate-900">ROLES AND RESPONSIBILITIES</h2>
+                </div>
+                <i class="fa-solid fa-user-gear text-ndkcGreen text-3xl"></i>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 1. Requesting Office -->
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-sm">
+                    <div class="flex items-center gap-3 text-ndkcGreen font-heading font-extrabold text-lg border-b border-slate-200 pb-2">
+                        <i class="fa-solid fa-building-user text-emerald-600 text-xl"></i>
+                        <span>1. Requesting Office</span>
+                    </div>
+                    <ul class="text-xs text-slate-700 space-y-3 font-medium">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>Report facility issues promptly.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>Submit a complete Repair Request Form.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>Provide access to the work area.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>Confirm satisfactory completion of repairs.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2. GASS Office -->
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-sm">
+                    <div class="flex items-center gap-3 text-ndkcGreen font-heading font-extrabold text-lg border-b border-slate-200 pb-2">
+                        <i class="fa-solid fa-building-shield text-emerald-600 text-xl"></i>
+                        <span>2. GASS Office</span>
+                    </div>
+                    <ul class="text-xs text-slate-700 space-y-3 font-medium">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>Receive and record repair requests.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>Conduct inspections and determine repair requirements.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>Prioritize, schedule, and monitor repair activities.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>Coordinate materials, manpower, and external contractors when necessary.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 3. Maintenance Personnel -->
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl space-y-4 shadow-sm">
+                    <div class="flex items-center gap-3 text-ndkcGreen font-heading font-extrabold text-lg border-b border-slate-200 pb-2">
+                        <i class="fa-solid fa-helmet-safety text-emerald-600 text-xl"></i>
+                        <span>3. Maintenance Personnel</span>
+                    </div>
+                    <ul class="text-xs text-slate-700 space-y-3 font-medium">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>Perform repairs safely and efficiently.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>Follow institutional standards and safety protocols.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+                            <span>Report additional defects identified during repair works.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Key Reminder & Motto -->
+            <div class="space-y-6 pt-6 border-t border-slate-200">
+                <div class="bg-emerald-950 text-white p-6 rounded-2xl border-2 border-emerald-500 shadow-md space-y-2">
+                    <div class="flex items-center gap-2 text-emerald-300 font-heading font-black text-sm uppercase">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Key Reminder
+                    </div>
+                    <p class="text-xs text-slate-200 font-medium leading-relaxed">
+                        Emergency repairs should be reported immediately to GASS (or Campus Security after office hours), followed by the submission of the Repair Request Form on the next working day.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-ndkcGreenDark via-ndkcGreen to-ndkcGreenDark text-white p-6 rounded-2xl text-center space-y-2 shadow-lg border-2 border-emerald-400">
+                    <h3 class="font-heading font-black text-sm sm:text-base text-white uppercase tracking-wider">
+                        Motto: SAFE CAMPUS | STRONG COMMUNITY | EXCELLENCE TOGETHER
+                    </h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-footer-ndkc1 text-slate-200 py-16 border-t-8 border-emerald-500 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
+            <div class="space-y-2">
+                <p class="font-heading font-black text-sm sm:text-base text-white uppercase tracking-wider">NOTRE DAME OF KIDAPAWAN COLLEGE</p>
+                <p class="text-emerald-200 text-xs sm:text-sm">City of Kidapawan | General Administrative Support Services (GASS) Office</p>
+                <p class="text-slate-400 text-xs pt-2">&copy; 2026 Notre Dame of Kidapawan College. All rights reserved.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Lovella Faith Banguis Diez, DBM. All rights reserved.</p>
     </footer>
+
+    <!-- HIDDEN IFRAME FOR SILENT DIRECT GOOGLE FORM SUBMISSION -->
+    <iframe name="hidden_google_form_iframe" id="hidden_google_form_iframe" style="display:none;" onload="handleIframeLoad()"></iframe>
+
+    <!-- INTERACTIVE ONLINE REPAIR REQUEST MODAL FORM -->
+    <div id="requestModal" class="fixed inset-0 z-[9999] bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full border-2 border-ndkcGreen overflow-hidden relative">
+            
+            <div class="bg-ndkcGreen text-white p-6 flex justify-between items-center border-b-4 border-emerald-500">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white rounded-full overflow-hidden flex items-center justify-center border border-emerald-300">
+                        <img src="ndkc no bg.jpg" onerror="this.onerror=null; this.src='ndkc_logo_clean.jpg';" alt="NDKC Logo" class="w-full h-full object-contain clean-seal">
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-black text-base uppercase">GASS FACILITY REPAIR REQUEST TICKET</h3>
+                        <p class="text-xs text-emerald-200">Official Google Form Submission Portal</p>
+                    </div>
+                </div>
+                <button type="button" onclick="closeRequestModal()" class="text-white hover:text-emerald-300 text-2xl font-bold p-2 cursor-pointer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- DIRECT GOOGLE FORM SUBMISSION FORM -->
+            <form id="repairTicketForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdFUElJx0wTaPyqQ1QChUgCnVKq52NHQEfV2whQhq5GgwSKuw/formResponse" target="hidden_google_form_iframe" method="POST" onsubmit="submitRepairTicket(event)" class="p-8 space-y-5 text-xs max-h-[80vh] overflow-y-auto">
+                
+                <!-- Ticket Number Display (Read-only) -->
+                <div>
+                    <label class="block font-heading font-bold text-slate-700 mb-1.5 text-xs">Generated Ticket Number</label>
+                    <input type="text" id="ticketNumberDisplay" readonly class="w-full p-3 bg-slate-100 border border-slate-300 rounded-xl font-bold text-emerald-800">
+                </div>
+
+                <!-- ROW 1: Date & Email Address -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-heading font-bold text-slate-700 mb-1.5 text-xs">Date *</label>
+                        <input type="date" id="reqDate" name="entry.220144067" required class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl font-medium focus:ring-2 focus:ring-ndkcGreen focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-heading font-bold text-slate-700 mb-1.5 text-xs">Email Address</label>
+                        <input type="email" id="reqEmail" name="emailAddress" placeholder="Enter your email address (optional)" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl font-medium focus:ring-2 focus:ring-ndkcGreen focus:outline-none">
+                    </div>
+                </div>
+
+                <!-- ROW 2: Task / Description -->
+                <div>
+                    <label class="block font-heading font-bold text-slate-700 mb-1.5 text-xs">Task / Description *</label>
+                    <p class="text-[11px] text-slate-500 mb-1 font-medium">Briefly describe what needs repair or maintenance (e.g., Aircon Repair, Room 101).</p>
+                    <textarea id="reqTask" required rows="3" placeholder="Enter detailed description of repair required..." class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl font-medium focus:ring-2 focus:ring-ndkcGreen focus:outline-none"></textarea>
+                    <!-- Hidden combined task entry field -->
+                    <input type="hidden" id="entry_task" name="entry.1085792832">
+                </div>
+
+                <!-- ROW 3: Priority Level & Department / Office -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-heading font-bold text-slate-700 mb-1.5 text-xs">Priority Level *</label>
+                        <select id="reqPriority" name="entry.14735905" required class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl font-medium focus:ring-2 focus:ring-ndkcGreen focus:outline-none">
+                            <option value="">Select Priority Level...</option>
+                            <option value="EMERGENCY">EMERGENCY</option>
+                            <option value="URGENT">URGENT</option>
+                            <option value="ROUTINE">ROUTINE</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-heading font-bold text-slate-700 mb-1.5 text-xs">Department / Office *</label>
+                        <input type="text" id="reqDept" name="entry.153830031" required placeholder="e.g., JHS, GASS, Accounting" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl font-medium focus:ring-2 focus:ring-ndkcGreen focus:outline-none">
+                    </div>
+                </div>
+
+                <!-- ROW 4: Requested By & Department Head -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-heading font-bold text-slate-700 mb-1.5 text-xs">Requested By *</label>
+                        <input type="text" id="reqRequestedBy" name="entry.1276887303" required placeholder="Enter your full name" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl font-medium focus:ring-2 focus:ring-ndkcGreen focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-heading font-bold text-slate-700 mb-1.5 text-xs">Department / Office Head *</label>
+                        <input type="text" id="reqDeptHead" name="entry.1979472292" required placeholder="Enter Head's full name" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl font-medium focus:ring-2 focus:ring-ndkcGreen focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="flex justify-end gap-3 pt-2">
+                    <button type="button" onclick="closeRequestModal()" class="px-5 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800 font-heading font-bold rounded-xl cursor-pointer transition">
+                        Cancel
+                    </button>
+                    <button type="submit" id="submitBtn" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-black rounded-xl shadow-lg cursor-pointer transition flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-emerald-200"></i>
+                        <span id="submitBtnText">Submit Request</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- QR ZOOM LIGHTBOX MODAL -->
+    <div id="qrModal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 hidden" onclick="closeQRZoom()">
+        <div class="bg-white p-8 rounded-3xl max-w-sm w-full text-center space-y-4 border-4 border-ndkcGreen relative shadow-2xl" onclick="event.stopPropagation()">
+            <button type="button" onclick="closeQRZoom()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-2xl font-bold cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-heading font-extrabold text-base text-ndkcGreen uppercase">NDKC Repair Request QR Code</h3>
+            <img src="NDKC repairs request form.png" onerror="this.onerror=null; this.src='https://placehold.co/300x300/004822/FFFFFF?text=QR+PORTAL';" alt="QR Code Enlarged" class="w-full h-auto rounded-2xl border border-slate-200 shadow-md">
+            <p class="text-xs text-slate-600 font-medium">Scan using smartphone camera or QR reader app.</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FUNCTIONS -->
+    <script>
+        let isSubmitting = false;
+        let currentTicket = '';
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            
+            const reqDateInput = document.getElementById('reqDate');
+            if (reqDateInput) {
+                reqDateInput.value = `${yyyy}-${mm}-${dd}`;
+            }
+
+            const dateTag = `${mm}${dd}${yyyy}`;
+            const storageKey = `ndkc_ticket_counter_${dateTag}`;
+            
+            let counter = localStorage.getItem(storageKey);
+            if (!counter) {
+                counter = 1;
+            } else {
+                counter = parseInt(counter, 10) + 1;
+            }
+            localStorage.setItem(storageKey, counter);
+            
+            const paddedCounter = String(counter).padStart(3, '0');
+            currentTicket = `NDKC-GASS-${dateTag}${paddedCounter}`;
+            
+            const ticketDisplay = document.getElementById('ticketNumberDisplay');
+            if (ticketDisplay) {
+                ticketDisplay.value = currentTicket;
+            }
+        });
+
+        let mobileMenuOpen = false;
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            mobileMenuOpen = !mobileMenuOpen;
+            if (mobileMenuOpen) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+
+        function openRequestModal() {
+            const modal = document.getElementById('requestModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closeRequestModal() {
+            const modal = document.getElementById('requestModal');
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function zoomQR() {
+            document.getElementById('qrModal').classList.remove('hidden');
+        }
+        function closeQRZoom() {
+            document.getElementById('qrModal').classList.add('hidden');
+        }
+
+        function submitRepairTicket(e) {
+            const rawTask = document.getElementById('reqTask').value;
+            document.getElementById('entry_task').value = `[Ticket: ${currentTicket}] ${rawTask}`;
+
+            isSubmitting = true;
+            const btnText = document.getElementById('submitBtnText');
+            btnText.innerText = 'Transmitting...';
+            
+            const submitBtn = document.getElementById('submitBtn');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+            }
+
+            setTimeout(() => {
+                alert('REPAIR REQUEST SUCCESSFULLY SUBMITTED!\n\nTicket Number: ' + currentTicket + '\nYour response has been successfully recorded.');
+                closeRequestModal();
+                document.getElementById('repairTicketForm').reset();
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                }
+                btnText.innerText = 'Submit Request';
+                isSubmitting = false;
+            }, 1000);
+        }
+
+        function handleIframeLoad() {
+            if (isSubmitting) {
+                console.log('Google Form response recorded successfully.');
+            }
+        }
+    </script>
 
 </body>
 </html>
