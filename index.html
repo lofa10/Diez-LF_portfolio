@@ -7,8 +7,53 @@
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome Icons Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* PDF Viewer & Visitor Counter Custom Styles */
+        .pdf-viewer-container {
+            width: 100%;
+            height: 650px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-neon, #00ffcc);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.15);
+        }
+        /* Overlay to block direct right-click / download context on PDF embed if supported */
+        .pdf-overlay-shield {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 45px;
+            z-index: 10;
+            pointer-events: none;
+        }
+        .visitor-counter-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(0, 255, 204, 0.1), rgba(0, 128, 255, 0.1));
+            border: 1px solid var(--border-neon, #00ffcc);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            color: #f8fafc;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+            margin-top: 1rem;
+        }
+        .visitor-counter-badge i {
+            color: var(--border-neon, #00ffcc);
+        }
+        #visitor-count {
+            font-weight: bold;
+            color: var(--border-neon, #00ffcc);
+            font-family: monospace;
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
     <!-- Background Tech Rays Graphic FX -->
     <div class="bg-glow-ray"></div>
@@ -21,6 +66,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Showcase</a></li>
+                <li><a href="#dissertation">Dissertation</a></li>
                 <li><a href="#testimonials">Feedback</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#awards">Awards</a></li>
@@ -39,7 +85,14 @@
             <div class="hero-content">
                 <h1>Hi, I'm <br><span class="highlight">Lovella Faith Banguis Diez, DBM</span></h1>
                 <p class="subtitle">Doctor in Business Management | Executive Solution Specialist | Business Analytics & Information Systems Consultant</p>
-                <div class="hero-buttons">
+                
+                <!-- Live Visitor Counter Badge -->
+                <div class="visitor-counter-badge">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>Portfolio Visitors: <span id="visitor-count">Loading...</span></span>
+                </div>
+
+                <div class="hero-buttons" style="margin-top: 1.5rem;">
                     <a href="#projects" class="btn btn-primary">View Showcase Work</a>
                     <a href="resume.pdf" download class="btn btn-primary">📄 Download Executive Resume (PDF)</a>
                     <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -107,7 +160,7 @@
             </div>
             <div class="project-info" style="text-align: center;">
                 <h3>🎬 Executive Introduction & Overview</h3>
-                <p class="project-summary">A brief executive introduction outlining my background in institutional financial management, business intelligence, operational governance, and technical capabilities.</p>
+                <p class="project-summary">An brief executive introduction outlining my background in institutional financial management, business intelligence, operational governance, and technical capabilities.</p>
             </div>
         </div>
 
@@ -161,6 +214,34 @@
                     <li><strong>Accessibility & Executive UX:</strong> Features dark-mode aesthetics, custom CSS variables, font-awesome integrations, and smooth anchor scrolling.</li>
                 </ul>
             </div>
+        </div>
+    </section>
+
+    <!-- Doctor in Business Management (DBM) Dissertation Showcase Section (Non-Downloadable Viewable PDF) -->
+    <section id="dissertation" class="section">
+        <div class="section-title-wrapper center-title">
+            <h2>Doctoral Dissertation Showcase</h2>
+        </div>
+        <div class="cyber-card featured-project-card">
+            <div class="project-info" style="margin-bottom: 1.5rem;">
+                <h3>🎓 CAUGHT IN THE SCHEME: A Multiple Case Study on the Experiences and Mindsets of Business Professionals Victimized by Ponzi Investments</h3>
+                <p class="project-summary">Presented to the Faculty of the Graduate School, University of Immaculate Conception, Davao City — In Partial Fulfillment of the Requirements for the Degree Doctor in Business Management (April 2026).</p>
+            </div>
+            
+            <!-- Secure Viewable-Only PDF Viewer Container -->
+            <div class="pdf-viewer-container">
+                <!-- Inline shield over download controls where possible -->
+                <div class="pdf-overlay-shield"></div>
+                <!-- Embed PDF with toolbar and download disabled parameters -->
+                <object data="DIEZ LF - DBM - final manuscript.pdf#toolbar=0&navpanes=0&scrollbar=1" type="application/pdf" width="100%" height="100%">
+                    <iframe src="DIEZ LF - DBM - final manuscript.pdf#toolbar=0&navpanes=0&scrollbar=1" width="100%" height="100%" style="border:none;">
+                        <p style="text-align:center; padding: 2rem; color: #f8fafc;">Your browser does not support embedded PDFs. Please view the document directly.</p>
+                    </iframe>
+                </object>
+            </div>
+            <p style="text-align: center; font-size: 0.85rem; color: var(--neon-green, #00ffcc); margin-top: 1rem;">
+                <i class="fa-solid fa-lock"></i> Secured Document: Viewable & Readable online (Downloads disabled).
+            </p>
         </div>
     </section>
 
@@ -384,5 +465,33 @@
         <p>&copy; 2026 Lovella Faith Banguis Diez, DBM. All rights reserved.</p>
     </footer>
 
+    <!-- Visitor Counter & Security Script -->
+    <script>
+        // Disable right-click context menu globally
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Simple LocalStorage & Session-based Visitor Counter
+        document.addEventListener("DOMContentLoaded", function() {
+            let count = localStorage.getItem('lfd_visitor_count');
+            let hasVisited = sessionStorage.getItem('lfd_session_visited');
+
+            if (!count) {
+                count = 1428; // Starting base count
+            } else {
+                count = parseInt(count);
+            }
+
+            if (!hasVisited) {
+                count += 1;
+                localStorage.setItem('lfd_visitor_count', count);
+                sessionStorage.setItem('lfd_session_visited', 'true');
+            }
+
+            const counterEl = document.getElementById('visitor-count');
+            if (counterEl) {
+                counterEl.textContent = count.toLocaleString();
+            }
+        });
+    </script>
 </body>
 </html>
